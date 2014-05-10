@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_BeaconTeal">#14C7CC</color>
+    <color name="color_BeaconWhite">#FFFFFF</color>
+    <color name="color_BeaconDarkTeal">#229C9F</color>
+</resources>
