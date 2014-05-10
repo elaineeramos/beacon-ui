@@ -32,7 +32,7 @@
 	        android:layout_height="wrap_content"
 	        android:gravity="center"
 	        android:fontFamily="sans-serif-light"
-	        android:textSize="18sp"
+	        android:textSize="16sp"
 	        android:textColor="@color/color_BeaconWhite"
 	        android:textColorHint="@color/color_BeaconWhite"
 	        android:hint="@null"

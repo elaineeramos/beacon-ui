@@ -7,4 +7,4 @@
     android:textColor="@color/color_BeaconWhite"
     android:fontFamily="sans-serif-light"
     android:background="@color/color_BeaconTeal"
-    android:textSize="20sp"/>
+    android:textSize="16sp"/>

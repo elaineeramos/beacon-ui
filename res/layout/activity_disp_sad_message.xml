@@ -33,7 +33,7 @@
 	        android:layout_marginBottom="60dp"
 	        android:gravity="center"
 	        android:fontFamily="sans-serif-light"
-	        android:textSize="12sp"
+	        android:textSize="16sp"
 	        android:textColor="@color/color_BeaconWhite"
 	        android:text="@string/string_stay_safe"/>
     </LinearLayout>
