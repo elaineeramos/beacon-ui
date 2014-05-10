@@ -10,22 +10,33 @@
     tools:context=".MainActivity" >
 	
     <LinearLayout
-        android:id="@+id/linear_foundPerson"
+        android:id="@+id/linear_contactQuerier"
         android:orientation="vertical"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    android:layout_centerInParent="true">
 
         <TextView 
-            android:id="@+id/text_StaySafeReminder"
+            android:id="@+id/text_ThankYou"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:gravity="center"
 	        android:fontFamily="sans-serif-light"
 	        android:textSize="30sp"
 	        android:textColor="@color/color_BeaconWhite"
-	        android:text="@string/string_reminder_StaySafe"
-	        android:layout_marginBottom="60dp"/>       
-	</LinearLayout>
+	        android:text="@string/string_Thank_You"/>
+        
+        <TextView 
+            android:id="@+id/text_InformYou"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:fontFamily="sans-serif-light"
+	        android:textSize="18sp"
+	        android:textColor="@color/color_BeaconWhite"
+	        android:text="@string/string_inform_you"
+	        android:layout_marginBottom="60dp"/>
+        
+    </LinearLayout>
 
 </RelativeLayout>

@@ -36,52 +36,73 @@ public final class R {
         public static final int selector_text_color_change=0x7f020002;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0011;
-        public static final int button_Report=0x7f0a0005;
-        public static final int button_Search=0x7f0a0004;
+        public static final int action_settings=0x7f0a001a;
+        public static final int button_Report=0x7f0a0008;
+        public static final int button_Search=0x7f0a0007;
+        public static final int linear_contactQuerier=0x7f0a0002;
         public static final int linear_foundPerson=0x7f0a0000;
-        public static final int linear_inputName=0x7f0a0006;
-        public static final int linear_reportName=0x7f0a000a;
-        public static final int linear_reportStatus=0x7f0a000e;
-        public static final int linearlayout_home=0x7f0a0002;
-        public static final int spinner_status=0x7f0a0010;
-        public static final int text_DayTime=0x7f0a0003;
-        public static final int text_EnterFullName=0x7f0a0008;
-        public static final int text_NameInstruction=0x7f0a0009;
-        public static final int text_ReportAsk=0x7f0a000b;
-        public static final int text_ReportAskStatus=0x7f0a000f;
-        public static final int text_ReportFullName=0x7f0a000c;
-        public static final int text_ReportNameInstruction=0x7f0a000d;
-        public static final int text_SearchAsk=0x7f0a0007;
+        public static final int linear_inputName=0x7f0a0009;
+        public static final int linear_reportName=0x7f0a000d;
+        public static final int linear_reportStatus=0x7f0a0011;
+        public static final int linear_rescueName=0x7f0a0014;
+        public static final int linearlayout_home=0x7f0a0005;
+        public static final int spinner_status=0x7f0a0013;
+        public static final int text_AskContact=0x7f0a0018;
+        public static final int text_DayTime=0x7f0a0006;
+        public static final int text_EnterFullName=0x7f0a000b;
+        public static final int text_EnterPhoneNumber=0x7f0a0019;
+        public static final int text_InformYou=0x7f0a0004;
+        public static final int text_NameInstruction=0x7f0a000c;
+        public static final int text_ReportAsk=0x7f0a000e;
+        public static final int text_ReportAskStatus=0x7f0a0012;
+        public static final int text_ReportFullName=0x7f0a000f;
+        public static final int text_ReportNameInstruction=0x7f0a0010;
+        public static final int text_RescueAddress=0x7f0a0016;
+        public static final int text_RescueAddressInstruction=0x7f0a0017;
+        public static final int text_RescueAsk=0x7f0a0015;
+        public static final int text_SearchAsk=0x7f0a000a;
         public static final int text_StaySafeReminder=0x7f0a0001;
+        public static final int text_ThankYou=0x7f0a0003;
     }
     public static final class layout {
         public static final int activity_found_person=0x7f030000;
-        public static final int activity_main=0x7f030001;
-        public static final int activity_report_person=0x7f030002;
-        public static final int spinner_item=0x7f030003;
+        public static final int activity_inform_querier=0x7f030001;
+        public static final int activity_main=0x7f030002;
+        public static final int activity_report_person=0x7f030003;
+        public static final int activity_rescue_person=0x7f030004;
+        public static final int spinner_item=0x7f030005;
     }
     public static final class menu {
         public static final int found_person=0x7f090000;
-        public static final int main=0x7f090001;
-        public static final int report_person=0x7f090002;
+        public static final int inform_querier=0x7f090001;
+        public static final int main=0x7f090002;
+        public static final int report_person=0x7f090003;
+        public static final int rescue_person=0x7f090004;
     }
     public static final class string {
         public static final int action_settings=0x7f060001;
         public static final int app_name=0x7f060000;
-        public static final int hello_world=0x7f06000d;
+        public static final int hello_world=0x7f060013;
+        public static final int string_Contact_Ask=0x7f06000a;
         public static final int string_DateTime=0x7f060004;
         public static final int string_Location_Ask=0x7f060008;
         public static final int string_Report=0x7f060003;
         public static final int string_Report_Ask=0x7f060006;
+        public static final int string_Rescue_Ask=0x7f060009;
         public static final int string_Search=0x7f060002;
         public static final int string_Search_Ask=0x7f060005;
         public static final int string_Status_Ask=0x7f060007;
-        public static final int string_instruction_EnterFullName=0x7f060009;
-        public static final int string_instruction_ReportStatus=0x7f06000a;
-        public static final int string_reminder_StaySafe=0x7f06000b;
-        public static final int title_activity_found_person=0x7f06000e;
-        public static final int title_activity_report_person=0x7f06000c;
+        public static final int string_Thank_You=0x7f060010;
+        public static final int string_inform_you=0x7f060011;
+        public static final int string_instruction_Contact_Number=0x7f06000e;
+        public static final int string_instruction_EnterFullName=0x7f06000b;
+        public static final int string_instruction_EnterLocation=0x7f06000d;
+        public static final int string_instruction_ReportStatus=0x7f06000c;
+        public static final int string_reminder_StaySafe=0x7f06000f;
+        public static final int title_activity_found_person=0x7f060014;
+        public static final int title_activity_inform_querier=0x7f060016;
+        public static final int title_activity_report_person=0x7f060012;
+        public static final int title_activity_rescue_person=0x7f060015;
     }
     public static final class style {
         /** 

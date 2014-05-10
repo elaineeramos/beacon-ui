@@ -30,6 +30,14 @@
             android:name="com.example.beacon.FoundPerson"
             android:label="@string/title_activity_found_person" >
         </activity>
+        <activity
+            android:name="com.example.beacon.RescuePerson"
+            android:label="@string/title_activity_rescue_person" >
+        </activity>
+        <activity
+            android:name="com.example.beacon.InformQuerier"
+            android:label="@string/title_activity_inform_querier" >
+        </activity>
     </application>
 
 </manifest>

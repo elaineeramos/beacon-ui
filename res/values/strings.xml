@@ -10,9 +10,15 @@
     <string name="string_Report_Ask">Who are you reporting?</string>
     <string name="string_Status_Ask">What is their Status?</string>
     <string name="string_Location_Ask">Where is ____ found?</string>
+    <string name="string_Rescue_Ask">Where is ___?</string>
+    <string name="string_Contact_Ask">Where can we reach you?</string>
     <string name="string_instruction_EnterFullName">Please enter full name</string>
     <string name="string_instruction_ReportStatus">Please choose status</string>
+    <string name="string_instruction_EnterLocation">Please enter location</string>
+    <string name="string_instruction_Contact_Number">Please enter your mobile number</string>
     <string name="string_reminder_StaySafe">Stay Safe, Name!</string>
+    <string name="string_Thank_You">Thank you for your help!</string>
+    <string name="string_inform_you">We will inform you when ___ is found.</string>
 
     <string-array name="string_array_status">
         <item>Found Alive</item>
@@ -24,5 +30,7 @@
     <string name="title_activity_report_person">ReportPerson</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_found_person">FoundPerson</string>
+    <string name="title_activity_rescue_person">RescuePerson</string>
+    <string name="title_activity_inform_querier">InformQuerier</string>
 
 </resources>

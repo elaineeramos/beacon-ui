@@ -46,16 +46,18 @@ String firstName = null;
     	etReportName.setOnKeyListener(new OnKeyListener() {
     	    public boolean onKey(View v, int keyCode, KeyEvent event) {
     	       if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-    	    	   Toast.makeText(ReportPerson.this, etReportName.getText(), Toast.LENGTH_SHORT).show();
     	    	   vReportName.setVisibility(View.GONE);
     	    	   vReportStatus.setVisibility(View.VISIBLE);
     	    	   hideSoftKeyboard();
     	    	   
-    	    	   //Set entered first name to next question
-    	    	   
+    	    	   //Set entered first name to next question  	    	   
     	    	   if((boolean)(etReportName.getText().toString()).contains(" "))
     	    	   {
     	    		   firstName = etReportName.getText().toString().substring(0, etReportName.getText().toString().indexOf(" ")); 
+    	    	   }
+    	    	   else
+    	    	   {
+    	    		   firstName = etReportName.getText().toString();
     	    	   }
     	    	   
     	    	   tStatus.setText("What is " + firstName + "'s status?");
@@ -66,10 +68,7 @@ String firstName = null;
     	    }
     	});
 		
-		
-    	
-    	
-    	
+		   	
 		ArrayList<String> arStatus = new ArrayList<String>();
 		arStatus.add("Choose Status");
 		arStatus.add("Found Alive");
@@ -79,7 +78,8 @@ String firstName = null;
 		ArrayAdapter<String> adapterStatus;
 		Spinner spinnerStatus= (Spinner) findViewById(R.id.spinner_status);
 		adapterStatus= new ArrayAdapter<String>(this, R.layout.spinner_item, arStatus);
-		spinnerStatus.setAdapter(adapterStatus);			
+		spinnerStatus.setAdapter(adapterStatus);	
+		
 		spinnerStatus.setOnItemSelectedListener(new OnItemSelectedListener() {
 		    @Override
 		    public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
@@ -87,16 +87,17 @@ String firstName = null;
 		    	switch (position)
 		    	{
 		    		case 1:
-		    			Intent intent = new Intent(ReportPerson.this, FoundPerson.class);
-						intent.putExtra(stringFirstName, firstName);
-		                startActivity(intent);
-
+		    			Intent intentFound = new Intent(ReportPerson.this, FoundPerson.class);
+		    			intentFound.putExtra(stringFirstName, firstName);
+		                startActivity(intentFound);
 		    			break;
 		    		case 2:
 		    			Toast.makeText(ReportPerson.this, "EVER TESTING 2", Toast.LENGTH_SHORT).show();
 		    			break;
 		    		case 3:
-		    			Toast.makeText(ReportPerson.this, "EVER TESTING 3", Toast.LENGTH_SHORT).show();
+		    			Intent intentRescue = new Intent(ReportPerson.this, RescuePerson.class);
+		    			intentRescue.putExtra(stringFirstName, firstName);
+		                startActivity(intentRescue);
 		    			break;
 		    		case 4:
 		    			Toast.makeText(ReportPerson.this, "EVER TESTING 4", Toast.LENGTH_SHORT).show();
