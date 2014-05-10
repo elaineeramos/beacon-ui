@@ -21,12 +21,18 @@ public class InformQuerier extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_inform_querier);
+		face = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Bold.ttf");
+		
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		getActionBar().setTitle("beaconPh");
+		getActionBar().setIcon(android.R.color.transparent);
 		
 		Bundle extras = getIntent().getExtras();
 		final String stFirstName = extras.getString("MESSAGE");
 		
 		final LinearLayout vContact = (LinearLayout)findViewById(R.id.linear_contactQuerier);
 		final LinearLayout vMessage = (LinearLayout)findViewById(R.id.linear_message);
+		
 				
 		etContact = (EditText) findViewById(R.id.text_EnterPhoneNumber);
 		etContact.setOnKeyListener(new OnKeyListener() {
@@ -43,10 +49,12 @@ public class InformQuerier extends Activity {
     	    }
     	});
 		
+		final TextView tContactAsk = (TextView)findViewById(R.id.text_AskContact);
+		tContactAsk.setTypeface(face);
+		
 		final TextView tInform = (TextView)findViewById(R.id.text_InformYou);
 		final TextView tThankyou = (TextView)findViewById(R.id.text_ThankYou);
-		
-		face = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Bold.ttf");
+				
 		tThankyou.setTypeface(face);
 		
 		tInform.setText("We will inform you once " + stFirstName + " is safe.");		

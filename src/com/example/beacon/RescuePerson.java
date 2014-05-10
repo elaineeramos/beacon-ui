@@ -22,6 +22,10 @@ EditText etLocation;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_rescue_person);
 		
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		getActionBar().setTitle("beaconPh");
+		getActionBar().setIcon(android.R.color.transparent);
+		
 		Bundle extras = getIntent().getExtras();
 		final String stFirstName = extras.getString("MESSAGE");
 		

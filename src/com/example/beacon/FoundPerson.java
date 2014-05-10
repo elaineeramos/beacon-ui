@@ -13,6 +13,10 @@ Typeface face;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_found_person);
 		
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		getActionBar().setTitle("beaconPh");
+		getActionBar().setIcon(android.R.color.transparent);
+		
 		Bundle extras = getIntent().getExtras();
 		String stFirstName = extras.getString("MESSAGE");
 		
