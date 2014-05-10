@@ -15,8 +15,8 @@
         android:theme="@style/CustomActionBarTheme" >
         <activity
             android:name="com.example.beacon.MainActivity"
-            android:label="@string/app_name" 
-            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,23 +25,31 @@
         </activity>
         <activity
             android:name="com.example.beacon.ReportPerson"
-            android:label="@string/title_activity_report_person" 
-            android:parentActivityName="com.example.beacon.MainActivity">
+            android:label="@string/title_activity_report_person"
+            android:parentActivityName="com.example.beacon.MainActivity" >
         </activity>
         <activity
             android:name="com.example.beacon.FoundPerson"
-            android:label="@string/title_activity_found_person" 
-            android:parentActivityName="com.example.beacon.ReportPerson">
+            android:label="@string/title_activity_found_person"
+            android:parentActivityName="com.example.beacon.ReportPerson" >
         </activity>
         <activity
             android:name="com.example.beacon.RescuePerson"
-            android:label="@string/title_activity_rescue_person" 
-            android:parentActivityName="com.example.beacon.ReportPerson">
+            android:label="@string/title_activity_rescue_person"
+            android:parentActivityName="com.example.beacon.ReportPerson" >
         </activity>
         <activity
             android:name="com.example.beacon.InformQuerier"
-            android:label="@string/title_activity_inform_querier" 
-            android:parentActivityName="com.example.beacon.MainActivity">
+            android:label="@string/title_activity_inform_querier"
+            android:parentActivityName="com.example.beacon.MainActivity" >
+        </activity>
+        <activity
+            android:name="com.example.beacon.DispSadMessage"
+            android:label="@string/title_activity_disp_sad_message"
+            android:parentActivityName="com.example.beacon.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.beacon.MainActivity" />
         </activity>
     </application>
 

@@ -108,7 +108,9 @@ String firstName = null;
 		                startActivity(intentRescue);
 		    			break;
 		    		case 4:
-		    			Toast.makeText(ReportPerson.this, "EVER TESTING 4", Toast.LENGTH_SHORT).show();
+		    			Intent intentSad = new Intent(ReportPerson.this, DispSadMessage.class);
+		    			intentSad.putExtra(stringFirstName, firstName);
+		                startActivity(intentSad);
 		    			break;
 		    		default:
 		    			break;

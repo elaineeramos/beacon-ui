@@ -77,7 +77,7 @@
 		    android:layout_height="wrap_content" 
 		    android:entries="@array/string_array_status"
        	 	android:prompt="@string/string_instruction_ReportStatus"
-       	 	android:layout_marginBottom="70dp"/>
+       	 	android:layout_marginBottom="90dp"/>
         
         
 	</LinearLayout>

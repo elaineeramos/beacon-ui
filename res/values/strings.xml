@@ -19,6 +19,8 @@
     <string name="string_reminder_StaySafe">Stay Safe, Name!</string>
     <string name="string_Thank_You">Thank you for your help!</string>
     <string name="string_inform_you">We will inform you when ___ is found.</string>
+    <string name="string_sorry">We are very sorry for the loss.</string>
+    <string name="string_stay_safe">Stay safe.</string>
 
     <string-array name="string_array_status">
         <item>Found Alive</item>
@@ -32,5 +34,6 @@
     <string name="title_activity_found_person">FoundPerson</string>
     <string name="title_activity_rescue_person">RescuePerson</string>
     <string name="title_activity_inform_querier">InformQuerier</string>
+    <string name="title_activity_disp_sad_message">DispSadMessage</string>
 
 </resources>
