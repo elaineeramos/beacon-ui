@@ -9,7 +9,6 @@ import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.view.Gravity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -84,21 +83,22 @@ protected List<GoogleMapsLocation> doInBackground(List<GoogleMapsLocation>... lo
 					Log.d("JPT", src + "");
 					
 					if(mOption2) {
-						mMap.addMarker(new MarkerOptions() //mMap is the Map Object
-						.title(locationName)
-						.position(src)
-						.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+//						mMap.addMarker(new MarkerOptions() //mMap is the Map Object
+//						.title(locationName)
+//						.position(src)
+//						.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
 						
 						mMap.addMarker(new MarkerOptions() //mMap is the Map Object
 						.title(locationName)
 						.position(current)
 						.icon(BitmapDescriptorFactory.fromResource(mAsset)));
 						
-						mMap.addMarker(new MarkerOptions() //mMap is the Map Object
-						.title(locationName)
-						.position(dest)
-						.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+//						mMap.addMarker(new MarkerOptions() //mMap is the Map Object
+//						.title(locationName)
+//						.position(dest)
+//						.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
 					} else {
+						//For polyline drawings
 						mMap.addMarker(new MarkerOptions() //mMap is the Map Object
 						.title(locationName)
 						.position(src)

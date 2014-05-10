@@ -1,6 +1,9 @@
 package com.example.beacon;
 
 import java.util.Calendar;
+
+import com.example.listviewsample.ListViewer;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -12,6 +15,7 @@ import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
@@ -19,6 +23,9 @@ public class MainActivity extends Activity {
 	protected static final String EXTRA_MESSAGE = "main";
 	private Button bSearch;
 	private Button bReport;
+	private LinearLayout vHome;
+	private LinearLayout vInputName;
+	private Button bStartSearch;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -86,14 +93,15 @@ public class MainActivity extends Activity {
         
         bReport.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // Go to ReportPerson activity            	
+                // Go to ReportPerson activity            
+            	// Need to pass message that this is for Persons not Locations
             	Intent intent = new Intent(MainActivity.this, ReportPerson.class);
                 String message = "dummy";
 				intent.putExtra("EXTRA_MESSAGE", message);
                 startActivity(intent);
             }
         });
-        
+       
 	}
 		
 	@Override

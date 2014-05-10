@@ -7,6 +7,7 @@ import com.example.beacon.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,10 +18,10 @@ import android.widget.ListView;
  
 public class ListViewer extends Activity {
 	private ListView listView = null;
+	private ArrayList<GoogleMapsLocation> items = new ArrayList<GoogleMapsLocation>();
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         setContentView(R.layout.listviewer);
-        
  
         // 1. pass context and data to the custom adapter
         MyAdapter adapter = new MyAdapter(this, generateData());
@@ -37,18 +38,18 @@ public class ListViewer extends Activity {
 				Location temp = (Location) listView.getItemAtPosition(position);
 		      	Intent intent = new Intent(ListViewer.this, MapView.class);
 		      	intent.putExtra("Location_parcel", temp);
+		      	intent.putExtra("isLocation", true);
+		      	intent.putExtra("isArray", false);
 		        startActivity(intent);
-				
 			}
         });
     }
  
     //After pressing search for user and query response is parsed, place into List
     private ArrayList<GoogleMapsLocation> generateData(){
-        ArrayList<GoogleMapsLocation> items = new ArrayList<GoogleMapsLocation>();
-        items.add(new GoogleMapsLocation(0, 1, "String1", "String2", 14.516018161679616,121.07677210654408));
-        items.add(new GoogleMapsLocation(0, 1, "String2", "String3", 14.516018161679616,121.07677210654408));
-        items.add(new GoogleMapsLocation(0, 1, "String3", "String4", 14.516018161679616,121.07677210654408));
+        items.add(new GoogleMapsLocation(0, 1, "BAGBAGUIN FAMILY HOSPITAL", "String2", 14.62470165,121.0053405));
+        items.add(new GoogleMapsLocation(0, 1, "SAN LORENZO HOSPITAL", "String3", 14.64316617,121.032353532136));
+        items.add(new GoogleMapsLocation(0, 1, "AP CRUZ COMMUNITY HOSPITAL", "String4", 14.5936311011481,120.957680893411));
  
         return items;
     }
@@ -68,6 +69,8 @@ public class ListViewer extends Activity {
        {
           case R.id.mapView:
 		      	Intent intent = new Intent(ListViewer.this, MapView.class);
+		      	intent.putParcelableArrayListExtra("Location_array", (ArrayList<? extends Parcelable>) items);
+		      	intent.putExtra("isArray", true);
 		        startActivity(intent);
                return true;
 
