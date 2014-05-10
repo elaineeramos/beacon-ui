@@ -7,8 +7,10 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.support.v4.app.NavUtils;
 import android.view.KeyEvent;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnKeyListener;
 import android.view.inputmethod.InputMethodManager;
@@ -31,6 +33,10 @@ String firstName = null;
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_report_person);
+		
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		getActionBar().setTitle("beaconPh");
+		getActionBar().setIcon(android.R.color.transparent);
 		
 		face = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Bold.ttf");
 		
@@ -71,7 +77,7 @@ String firstName = null;
 		   	
 		ArrayList<String> arStatus = new ArrayList<String>();
 		arStatus.add("Choose Status");
-		arStatus.add("Found Alive");
+		arStatus.add("Safe");
 		arStatus.add("Missing");
 		arStatus.add("Needs Rescue");
 		arStatus.add("Found Dead");
@@ -135,6 +141,17 @@ String firstName = null;
 	    InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
 	    view.requestFocus();
 	    inputMethodManager.showSoftInput(view, 0);
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	    // Respond to the action bar's Up/Home button
+	    case android.R.id.home:
+	        NavUtils.navigateUpFromSameTask(this);
+	        return true;
+	    }
+	    return super.onOptionsItemSelected(item);
 	}
 	
 }

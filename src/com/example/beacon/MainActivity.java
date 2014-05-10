@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.view.Window;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
@@ -19,7 +20,7 @@ public class MainActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+		super.onCreate(savedInstanceState);		
 		setContentView(R.layout.activity_main);
 					
 		String string_hour = "Hour";	
@@ -46,11 +47,11 @@ public class MainActivity extends Activity {
 		
 		Animation fadeIn1 = new AlphaAnimation(0, 1);
 		fadeIn1.setInterpolator(new DecelerateInterpolator());
-		fadeIn1.setDuration(1300);
+		fadeIn1.setDuration(1500);
 		
 		Animation fadeIn2 = new AlphaAnimation(0, 1);
 		fadeIn2.setInterpolator(new DecelerateInterpolator());
-		fadeIn2.setDuration(1700);
+		fadeIn2.setDuration(2100);
 		
 		// Animation for Date		
 		Animation aSlide = AnimationUtils.loadAnimation(this, R.anim.linear);				

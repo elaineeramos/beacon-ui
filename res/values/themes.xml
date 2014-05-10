@@ -9,9 +9,8 @@
     <!-- ActionBar styles -->
     <style name="MyActionBar"
            parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
-        <item name="android:titleTextStyle">@style/action_bar_title_text</item>
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:background">@color/color_BeaconTeal</item>
+        <item name="android:titleTextStyle">@style/action_bar_title_text</item>       
+        <item name="android:background">@color/color_BeaconBlack</item>
     </style>
     
     <style name="action_bar_title_text">
