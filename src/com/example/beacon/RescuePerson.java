@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 public class RescuePerson extends Activity {
 Typeface face;
-EditText etLocation = null;
+EditText etLocation;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

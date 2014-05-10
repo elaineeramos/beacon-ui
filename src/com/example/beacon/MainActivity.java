@@ -4,7 +4,6 @@ import java.util.Calendar;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -13,28 +12,18 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-protected static final String EXTRA_MESSAGE = "main";
-Typeface face;
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		face = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Bold.ttf");
 					
-		String string_hour;	
+		String string_hour = "Hour";	
 		string_hour = getCurrentHour();
 		
-		String string_day;	
-		string_day = getCurrentDay();
-					
-		StringBuilder string_datetime = new StringBuilder();
-
-		string_datetime.append(string_day);
-		string_datetime.append(string_hour);
-
-		string_day = string_datetime.toString();
+		String string_day = "Day";	
+		string_day = getCurrentDay();		
+		
+		string_day = string_day + string_hour;
 		
 		TextView textDateView = new TextView(this);
 		textDateView = (TextView)findViewById(R.id.text_DayTime);
@@ -58,7 +47,7 @@ Typeface face;
                 // Go to ReportPerson activity            	
             	Intent intent = new Intent(MainActivity.this, ReportPerson.class);
                 String message = "dummy";
-				intent.putExtra(EXTRA_MESSAGE, message);
+				intent.putExtra("EXTRA_MESSAGE", message);
                 startActivity(intent);
             }
         });
