@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,10 +14,12 @@ import android.view.View;
 import android.view.View.OnKeyListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.support.v4.app.NavUtils;
 
 public class SearchPerson extends Activity {
 	EditText etReportName;
+	Typeface face;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,10 @@ public class SearchPerson extends Activity {
 		getActionBar().setTitle("beaconPh");
 		getActionBar().setIcon(android.R.color.transparent);
 		
+		face = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Bold.ttf");
+		
+		TextView tSearch = (TextView)findViewById(R.id.text_AskSearch);
+		tSearch.setTypeface(face);
 		
 		etReportName = (EditText) findViewById(R.id.text_SearchFullName);
     	etReportName.setOnKeyListener(new OnKeyListener() {

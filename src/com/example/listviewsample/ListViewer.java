@@ -20,6 +20,7 @@ public class ListViewer extends Activity {
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         setContentView(R.layout.listviewer);
+        
  
         // 1. pass context and data to the custom adapter
         MyAdapter adapter = new MyAdapter(this, generateData());
