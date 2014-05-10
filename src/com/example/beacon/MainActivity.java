@@ -7,7 +7,7 @@ import android.graphics.Typeface;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
+import android.view.View.OnKeyListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -66,22 +66,27 @@ Typeface face;
             	
             	tQuestion = (TextView) findViewById(R.id.text_ReportAsk);
             	tQuestion.setTypeface(face);
-            	
+            
+                etReportName.setOnKeyListener(new OnKeyListener() {
+
+                    public boolean onKey(View v, int keyCode, KeyEvent event) {
+                          // If the event is a key-down event on the "enter" button
+                          if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                               (keyCode == KeyEvent.KEYCODE_ENTER))
+                          {
+                                // Perform action on Enter key press
+                        	  etReportName.clearFocus();
+                              System.out.print("EVER TESTING");
+                              return true;
+                          }
+                          System.out.print("EVER TESTING BBB");
+                          return false;
+                    }
+                });
             }
         });
         
-        etReportName.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                	System.out.println("EVER TESTING next action");
-                    return true;
-                }
-                
-                System.out.println("EVER TESTING next action1");
-                return false;
-            }
-        });
+
 	}
 	
 	
