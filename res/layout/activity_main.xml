@@ -103,5 +103,22 @@
 	        android:textColor="@color/color_BeaconWhite"
 	        android:text="@string/string_instruction_EnterFullName"/>
         
+		<Button 
+			android:id="@+id/startSearch"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_marginTop="18dp"
+			android:layout_marginLeft="16dp"
+			android:layout_marginRight="16dp"
+			android:layout_marginBottom="70dp"
+			android:onClick="buttonCalls"
+			android:textSize="28sp"
+			android:fontFamily="sans-serif-light"
+			android:textStyle="bold"
+			android:background="@color/color_BeaconTeal"
+	        android:textColor="@drawable/selector_text_color_change"
+			android:text="@string/string_Search"/>
+        
 	</LinearLayout>
 </RelativeLayout>

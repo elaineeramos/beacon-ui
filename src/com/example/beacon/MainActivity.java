@@ -1,6 +1,9 @@
 package com.example.beacon;
 
 import java.util.Calendar;
+
+import com.example.listviewsample.ListViewer;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -17,6 +20,13 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
+	protected static final String EXTRA_MESSAGE = "main";
+	private Button bSearch;
+	private Button bReport;
+	private LinearLayout vHome;
+	private LinearLayout vInputName;
+	private Button bStartSearch;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);		
@@ -34,10 +44,11 @@ public class MainActivity extends Activity {
 		textDateView = (TextView)findViewById(R.id.text_DayTime);
 		textDateView.setText(string_day);
 		
-		final Button bSearch = (Button) findViewById(R.id.button_Search);
-		final Button bReport = (Button) findViewById(R.id.button_Report);
-		final LinearLayout vHome = (LinearLayout) findViewById(R.id.linearlayout_home);
-		final LinearLayout vInputName = (LinearLayout) findViewById(R.id.linear_inputName);
+		bSearch = (Button) findViewById(R.id.button_Search);
+		bReport = (Button) findViewById(R.id.button_Report);
+		vHome = (LinearLayout) findViewById(R.id.linearlayout_home);
+		vInputName = (LinearLayout) findViewById(R.id.linear_inputName);
+		bStartSearch = (Button) findViewById(R.id.startSearch);
 		
 		// Fade In animation
 		Animation fadeIn = new AlphaAnimation(0, 1);
@@ -90,9 +101,19 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
+        
+        //Begin parser/query to API Server
+        bStartSearch.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+            	Intent intent = new Intent(MainActivity.this, ListViewer.class);
+                startActivity(intent);
+			}
+		});
+        
 	}
-	
-	
+		
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -160,4 +181,8 @@ public class MainActivity extends Activity {
 		return string_local_hour;
 	}
 	
+	@Override
+	public void onBackPressed(){
+         super.onBackPressed();
+	}
 }
