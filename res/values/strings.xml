@@ -36,4 +36,6 @@
     <string name="title_activity_inform_querier">InformQuerier</string>
     <string name="title_activity_disp_sad_message">DispSadMessage</string>
     <string name="mapView">Map</string>
+    <string name="title_activity_search_person">SearchPerson</string>
+
 </resources>

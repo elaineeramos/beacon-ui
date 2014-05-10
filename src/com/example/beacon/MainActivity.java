@@ -1,9 +1,6 @@
 package com.example.beacon;
 
 import java.util.Calendar;
-
-import com.example.listviewsample.ListViewer;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -15,7 +12,6 @@ import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
@@ -23,9 +19,6 @@ public class MainActivity extends Activity {
 	protected static final String EXTRA_MESSAGE = "main";
 	private Button bSearch;
 	private Button bReport;
-	private LinearLayout vHome;
-	private LinearLayout vInputName;
-	private Button bStartSearch;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +39,6 @@ public class MainActivity extends Activity {
 		
 		bSearch = (Button) findViewById(R.id.button_Search);
 		bReport = (Button) findViewById(R.id.button_Report);
-		vHome = (LinearLayout) findViewById(R.id.linearlayout_home);
-		vInputName = (LinearLayout) findViewById(R.id.linear_inputName);
-		bStartSearch = (Button) findViewById(R.id.startSearch);
 		
 		// Fade In animation
 		Animation fadeIn = new AlphaAnimation(0, 1);
@@ -86,9 +76,11 @@ public class MainActivity extends Activity {
 		
         bSearch.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // Perform action on click
-            	vHome.setVisibility(View.GONE);
-            	vInputName.setVisibility(View.VISIBLE);
+                // Go to SearchPerson
+            	Intent intentSearch = new Intent(MainActivity.this, SearchPerson.class);
+                String message = "dummy";
+                intentSearch.putExtra("EXTRA_MESSAGE", message);
+                startActivity(intentSearch);
             }
         });
         
@@ -101,16 +93,6 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
-        
-        //Begin parser/query to API Server
-        bStartSearch.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-            	Intent intent = new Intent(MainActivity.this, ListViewer.class);
-                startActivity(intent);
-			}
-		});
         
 	}
 		

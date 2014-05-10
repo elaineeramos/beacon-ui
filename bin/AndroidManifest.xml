@@ -8,6 +8,18 @@
         android:minSdkVersion="14"
         android:targetSdkVersion="17" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <!--
+         The following two permissions are not required to use
+             Google Maps Android API v2, but are recommended.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -44,8 +56,33 @@
             android:parentActivityName="com.example.beacon.MainActivity" >
         </activity>
         <activity
+            android:name="com.example.listviewsample.ListViewer"
+            android:label="@string/title_activity_inform_querier"
+            android:parentActivityName="com.example.beacon.MainActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name="com.example.listviewsample.MapView"
+            android:label="@string/title_activity_inform_querier"
+            android:parentActivityName="com.example.beacon.MainActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
+        </activity>
+        <activity
             android:name="com.example.beacon.DispSadMessage"
             android:label="@string/title_activity_disp_sad_message"
+            android:parentActivityName="com.example.beacon.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.beacon.MainActivity" />
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyAnJsQxSdkIcfFJwHoFBbDXtiGe0o6om_M" />
+
+        <activity
+            android:name="com.example.beacon.SearchPerson"
+            android:label="@string/title_activity_search_person"
             android:parentActivityName="com.example.beacon.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
