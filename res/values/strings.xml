@@ -6,8 +6,9 @@
     <string name="string_Search">SEARCH</string>
     <string name="string_Report">REPORT</string>
     <string name="string_DateTime">Date and Time</string>
-    <string name="string_Search_Hint">Who are you looking for?</string>
-    <string name="string_instruction_EnterFullName">Please enter their full name</string>
+    <string name="string_Search_Ask">Who are you looking for?</string>
+    <string name="string_Report_Ask">Who are you reporting?</string>
+    <string name="string_instruction_EnterFullName">Please enter full name</string>
     
 
 </resources>

@@ -23,7 +23,7 @@
 	        android:gravity="center"
 	        android:fontFamily="sans-serif-light"
 	        android:textSize="16sp"
-	        android:textColor="@color/color_BeaconWhite"
+	        android:textColor="@color/color_BeaconNotWhite"
 	        android:text="@string/string_DateTime" />
         
 	    <Button 
@@ -68,6 +68,16 @@
 	    android:layout_height="wrap_content"
 	    android:layout_centerInParent="true"
 	    android:visibility="gone">
+		
+        <TextView 
+            android:id="@+id/text_SearchAsk"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:fontFamily="sans-serif-light"
+	        android:textSize="26sp"
+	        android:textColor="@color/color_BeaconWhite"
+	        android:text="@string/string_Search_Ask"/>
 
         <EditText 
             android:id="@+id/text_EnterFullName"
@@ -78,7 +88,7 @@
 	        android:textSize="18sp"
 	        android:textColor="@color/color_BeaconWhite"
 	        android:textColorHint="@color/color_BeaconWhite"
-	        android:hint="@string/string_Search_Hint"
+	        android:hint="@null"
 	        android:maxLines="1"
 	        android:singleLine="true"/>
         
@@ -86,7 +96,52 @@
             android:id="@+id/text_NameInstruction"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
-	        android:layout_marginBottom="40dp"
+	        android:layout_marginBottom="60dp"
+	        android:gravity="center"
+	        android:fontFamily="sans-serif-light"
+	        android:textSize="12sp"
+	        android:textColor="@color/color_BeaconWhite"
+	        android:text="@string/string_instruction_EnterFullName"/>
+        
+	</LinearLayout>
+	
+    <LinearLayout
+        android:id="@+id/linear_reportName"
+        android:orientation="vertical"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_centerInParent="true"
+	    android:visibility="gone">
+
+        <TextView 
+            android:id="@+id/text_ReportAsk"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:fontFamily="sans-serif-light"
+	        android:textSize="26sp"
+	        android:textColor="@color/color_BeaconWhite"
+	        android:text="@string/string_Report_Ask"/>
+        
+        <EditText 
+            android:id="@+id/text_ReportFullName"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:fontFamily="sans-serif-light"
+	        android:textSize="18sp"
+	        android:textColor="@color/color_BeaconWhite"
+	        android:textColorHint="@color/color_BeaconWhite"
+	        android:hint="@null"
+	        android:maxLines="1"
+	        android:singleLine="true"
+	        android:imeOptions="actionSend"/>
+        
+        <TextView 
+            android:id="@+id/text_ReportNameInstruction"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="60dp"
 	        android:gravity="center"
 	        android:fontFamily="sans-serif-light"
 	        android:textSize="12sp"
