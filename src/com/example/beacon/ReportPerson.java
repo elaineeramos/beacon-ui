@@ -92,7 +92,9 @@ String firstName = null;
 		                startActivity(intentFound);
 		    			break;
 		    		case 2:
-		    			Toast.makeText(ReportPerson.this, "EVER TESTING 2", Toast.LENGTH_SHORT).show();
+		    			Intent intentContact = new Intent(ReportPerson.this, InformQuerier.class);
+		    			intentContact.putExtra(stringFirstName, firstName);
+		                startActivity(intentContact);
 		    			break;
 		    		case 3:
 		    			Intent intentRescue = new Intent(ReportPerson.this, RescuePerson.class);
