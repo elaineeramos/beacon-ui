@@ -3,18 +3,23 @@ package com.example.beacon;
 import java.util.Calendar;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnKeyListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
+protected static final String EXTRA_MESSAGE = "main";
 Typeface face;
 
 	@Override
@@ -45,9 +50,7 @@ Typeface face;
 		final Button bReport = (Button) findViewById(R.id.button_Report);
 		final LinearLayout vHome = (LinearLayout) findViewById(R.id.linearlayout_home);
 		final LinearLayout vInputName = (LinearLayout) findViewById(R.id.linear_inputName);
-		final LinearLayout vReportName = (LinearLayout) findViewById(R.id.linear_reportName);
-		final EditText etReportName = (EditText) findViewById(R.id.text_ReportFullName);
-		
+
         bSearch.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
@@ -58,35 +61,13 @@ Typeface face;
         
         bReport.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // Perform action on click
-            	vHome.setVisibility(View.GONE);
-            	vReportName.setVisibility(View.VISIBLE);
-            	
-            	TextView tQuestion;
-            	
-            	tQuestion = (TextView) findViewById(R.id.text_ReportAsk);
-            	tQuestion.setTypeface(face);
-            
-                etReportName.setOnKeyListener(new OnKeyListener() {
-
-                    public boolean onKey(View v, int keyCode, KeyEvent event) {
-                          // If the event is a key-down event on the "enter" button
-                          if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
-                               (keyCode == KeyEvent.KEYCODE_ENTER))
-                          {
-                                // Perform action on Enter key press
-                        	  etReportName.clearFocus();
-                              System.out.print("EVER TESTING");
-                              return true;
-                          }
-                          System.out.print("EVER TESTING BBB");
-                          return false;
-                    }
-                });
+                // Go to ReportPerson activity            	
+            	Intent intent = new Intent(MainActivity.this, ReportPerson.class);
+                String message = "dummy";
+				intent.putExtra(EXTRA_MESSAGE, message);
+                startActivity(intent);
             }
         });
-        
-
 	}
 	
 	
