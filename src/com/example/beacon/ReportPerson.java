@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -21,18 +22,23 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class ReportPerson extends Activity {
+protected static final String stringFirstName = "MESSAGE";
 Typeface face;
 EditText etReportName;
+String firstName = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_report_person);
 		
+		face = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Bold.ttf");
+		
 		final LinearLayout vReportName = (LinearLayout) findViewById(R.id.linear_reportName);
 		final LinearLayout vReportStatus = (LinearLayout) findViewById(R.id.linear_reportStatus);
-		
-		face = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Bold.ttf");
+		final TextView tStatus = (TextView) findViewById(R.id.text_ReportAskStatus);
+		tStatus.setTypeface(face);
+				
 		TextView tQuestion = (TextView) findViewById(R.id.text_ReportAsk);
     	tQuestion.setTypeface(face);
     
@@ -44,6 +50,15 @@ EditText etReportName;
     	    	   vReportName.setVisibility(View.GONE);
     	    	   vReportStatus.setVisibility(View.VISIBLE);
     	    	   hideSoftKeyboard();
+    	    	   
+    	    	   //Set entered first name to next question
+    	    	   
+    	    	   if((boolean)(etReportName.getText().toString()).contains(" "))
+    	    	   {
+    	    		   firstName = etReportName.getText().toString().substring(0, etReportName.getText().toString().indexOf(" ")); 
+    	    	   }
+    	    	   
+    	    	   tStatus.setText("What is " + firstName + "'s status?");
     	    	   return true;
     	       }
     	       hideSoftKeyboard();
@@ -52,8 +67,8 @@ EditText etReportName;
     	});
 		
 		
-    	TextView tStatus = (TextView) findViewById(R.id.text_ReportAskStatus);
-    	tStatus.setTypeface(face);
+    	
+    	
     	
 		ArrayList<String> arStatus = new ArrayList<String>();
 		arStatus.add("Choose Status");
@@ -64,8 +79,7 @@ EditText etReportName;
 		ArrayAdapter<String> adapterStatus;
 		Spinner spinnerStatus= (Spinner) findViewById(R.id.spinner_status);
 		adapterStatus= new ArrayAdapter<String>(this, R.layout.spinner_item, arStatus);
-		spinnerStatus.setAdapter(adapterStatus);	
-		
+		spinnerStatus.setAdapter(adapterStatus);			
 		spinnerStatus.setOnItemSelectedListener(new OnItemSelectedListener() {
 		    @Override
 		    public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
@@ -73,7 +87,10 @@ EditText etReportName;
 		    	switch (position)
 		    	{
 		    		case 1:
-		    			Toast.makeText(ReportPerson.this, "EVER TESTING 1", Toast.LENGTH_SHORT).show();
+		    			Intent intent = new Intent(ReportPerson.this, FoundPerson.class);
+						intent.putExtra(stringFirstName, firstName);
+		                startActivity(intent);
+
 		    			break;
 		    		case 2:
 		    			Toast.makeText(ReportPerson.this, "EVER TESTING 2", Toast.LENGTH_SHORT).show();

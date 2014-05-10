@@ -37,7 +37,8 @@
 	        android:textColorHint="@color/color_BeaconWhite"
 	        android:hint="@null"
 	        android:maxLines="1"
-	        android:singleLine="true"/>
+	        android:singleLine="true"
+	        android:inputType="textCapWords"/>
         
         <TextView 
             android:id="@+id/text_ReportNameInstruction"

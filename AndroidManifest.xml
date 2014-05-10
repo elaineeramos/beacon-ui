@@ -26,6 +26,10 @@
             android:name="com.example.beacon.ReportPerson"
             android:label="@string/title_activity_report_person" >
         </activity>
+        <activity
+            android:name="com.example.beacon.FoundPerson"
+            android:label="@string/title_activity_found_person" >
+        </activity>
     </application>
 
 </manifest>
