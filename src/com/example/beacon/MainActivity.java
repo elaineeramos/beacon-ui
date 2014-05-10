@@ -1,24 +1,28 @@
 package com.example.beacon;
 
 import java.util.Calendar;
-
 import android.os.Bundle;
 import android.app.Activity;
+import android.graphics.Typeface;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-
+Typeface face;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		face = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Bold.ttf");
 					
 		String string_hour;	
 		string_hour = getCurrentHour();
@@ -42,6 +46,7 @@ public class MainActivity extends Activity {
 		final LinearLayout vHome = (LinearLayout) findViewById(R.id.linearlayout_home);
 		final LinearLayout vInputName = (LinearLayout) findViewById(R.id.linear_inputName);
 		final LinearLayout vReportName = (LinearLayout) findViewById(R.id.linear_reportName);
+		final EditText etReportName = (EditText) findViewById(R.id.text_ReportFullName);
 		
         bSearch.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -57,9 +62,28 @@ public class MainActivity extends Activity {
             	vHome.setVisibility(View.GONE);
             	vReportName.setVisibility(View.VISIBLE);
             	
+            	TextView tQuestion;
+            	
+            	tQuestion = (TextView) findViewById(R.id.text_ReportAsk);
+            	tQuestion.setTypeface(face);
+            	
+            }
+        });
+        
+        etReportName.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                	System.out.println("EVER TESTING next action");
+                    return true;
+                }
+                
+                System.out.println("EVER TESTING next action1");
+                return false;
             }
         });
 	}
+	
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

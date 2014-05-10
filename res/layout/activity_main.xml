@@ -119,7 +119,7 @@
 	        android:layout_height="wrap_content"
 	        android:gravity="center"
 	        android:fontFamily="sans-serif-light"
-	        android:textSize="26sp"
+	        android:textSize="30sp"
 	        android:textColor="@color/color_BeaconWhite"
 	        android:text="@string/string_Report_Ask"/>
         
@@ -135,7 +135,7 @@
 	        android:hint="@null"
 	        android:maxLines="1"
 	        android:singleLine="true"
-	        android:imeOptions="actionSend"/>
+	        android:imeOptions="actionNext"/>
         
         <TextView 
             android:id="@+id/text_ReportNameInstruction"
