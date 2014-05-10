@@ -6,6 +6,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.AnimationUtils;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -33,7 +38,41 @@ public class MainActivity extends Activity {
 		final Button bReport = (Button) findViewById(R.id.button_Report);
 		final LinearLayout vHome = (LinearLayout) findViewById(R.id.linearlayout_home);
 		final LinearLayout vInputName = (LinearLayout) findViewById(R.id.linear_inputName);
-
+		
+		// Fade In animation
+		Animation fadeIn = new AlphaAnimation(0, 1);
+		fadeIn.setInterpolator(new DecelerateInterpolator());
+		fadeIn.setDuration(900);
+		
+		Animation fadeIn1 = new AlphaAnimation(0, 1);
+		fadeIn1.setInterpolator(new DecelerateInterpolator());
+		fadeIn1.setDuration(1300);
+		
+		Animation fadeIn2 = new AlphaAnimation(0, 1);
+		fadeIn2.setInterpolator(new DecelerateInterpolator());
+		fadeIn2.setDuration(1700);
+		
+		// Animation for Date		
+		Animation aSlide = AnimationUtils.loadAnimation(this, R.anim.linear);				
+		AnimationSet animationSet = new AnimationSet(false);
+		animationSet.addAnimation(aSlide);
+		animationSet.addAnimation(fadeIn);
+		textDateView.startAnimation(animationSet);
+		
+		// Animation for Search
+		Animation aSlide1 = AnimationUtils.loadAnimation(this, R.anim.linear_delay_1);
+		AnimationSet animationSet1 = new AnimationSet(false);
+		animationSet1.addAnimation(aSlide1);
+		animationSet1.addAnimation(fadeIn1);		
+		bSearch.startAnimation(animationSet1);
+		
+		//Animation for Report
+		Animation aSlide2 = AnimationUtils.loadAnimation(this, R.anim.linear_delay_2);
+		AnimationSet animationSet2 = new AnimationSet(false);
+		animationSet2.addAnimation(aSlide2);
+		animationSet2.addAnimation(fadeIn2);		
+		bReport.startAnimation(animationSet2);
+		
         bSearch.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
