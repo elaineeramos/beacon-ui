@@ -60,23 +60,24 @@
 	    android:layout_centerInParent="true"
 	    android:visibility="gone">
         
+        <TextView 
+            android:id="@+id/text_ReportAskStatus"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:fontFamily="sans-serif-light"
+	        android:textSize="30sp"
+	        android:textColor="@color/color_BeaconWhite"
+	        android:text="@string/string_Status_Ask"/>
+        
         <Spinner
 		    android:id="@+id/spinner_status"
 		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content" 
 		    android:entries="@array/string_array_status"
-       	 	android:prompt="@string/string_instruction_ReportStatus"/>
+       	 	android:prompt="@string/string_instruction_ReportStatus"
+       	 	android:layout_marginBottom="70dp"/>
         
-        <TextView 
-            android:id="@+id/text_ReportStatusInstruction"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_marginBottom="60dp"
-	        android:gravity="center"
-	        android:fontFamily="sans-serif-light"
-	        android:textSize="12sp"
-	        android:textColor="@color/color_BeaconWhite"
-	        android:text="@string/string_instruction_ReportStatus"/>
         
 	</LinearLayout>
 </RelativeLayout>

@@ -14,6 +14,7 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
+        public static final int color_BeaconBlack=0x7f040004;
         public static final int color_BeaconDarkTeal=0x7f040003;
         public static final int color_BeaconNotWhite=0x7f040002;
         public static final int color_BeaconTeal=0x7f040000;
@@ -42,14 +43,14 @@ public final class R {
         public static final int linear_reportName=0x7f0a0008;
         public static final int linear_reportStatus=0x7f0a000c;
         public static final int linearlayout_home=0x7f0a0000;
-        public static final int spinner_status=0x7f0a000d;
+        public static final int spinner_status=0x7f0a000e;
         public static final int text_DayTime=0x7f0a0001;
         public static final int text_EnterFullName=0x7f0a0006;
         public static final int text_NameInstruction=0x7f0a0007;
         public static final int text_ReportAsk=0x7f0a0009;
+        public static final int text_ReportAskStatus=0x7f0a000d;
         public static final int text_ReportFullName=0x7f0a000a;
         public static final int text_ReportNameInstruction=0x7f0a000b;
-        public static final int text_ReportStatusInstruction=0x7f0a000e;
         public static final int text_SearchAsk=0x7f0a0005;
     }
     public static final class layout {
@@ -64,15 +65,16 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f060001;
         public static final int app_name=0x7f060000;
-        public static final int hello_world=0x7f06000a;
+        public static final int hello_world=0x7f06000b;
         public static final int string_DateTime=0x7f060004;
         public static final int string_Report=0x7f060003;
         public static final int string_Report_Ask=0x7f060006;
         public static final int string_Search=0x7f060002;
         public static final int string_Search_Ask=0x7f060005;
-        public static final int string_instruction_EnterFullName=0x7f060007;
-        public static final int string_instruction_ReportStatus=0x7f060008;
-        public static final int title_activity_report_person=0x7f060009;
+        public static final int string_Status_Ask=0x7f060007;
+        public static final int string_instruction_EnterFullName=0x7f060008;
+        public static final int string_instruction_ReportStatus=0x7f060009;
+        public static final int title_activity_report_person=0x7f06000a;
     }
     public static final class style {
         /** 

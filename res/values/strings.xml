@@ -8,9 +8,10 @@
     <string name="string_DateTime">Date and Time</string>
     <string name="string_Search_Ask">Who are you looking for?</string>
     <string name="string_Report_Ask">Who are you reporting?</string>
+    <string name="string_Status_Ask">What is their Status?</string>
     <string name="string_instruction_EnterFullName">Please enter full name</string>
     <string name="string_instruction_ReportStatus">Please choose status</string>
-
+    
     <string-array name="string_array_status">
         <item>Found Alive</item>
         <item>Missing</item>

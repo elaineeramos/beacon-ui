@@ -4,4 +4,5 @@
     <color name="color_BeaconWhite">#FFFFFF</color>
     <color name="color_BeaconNotWhite">#F5F5F5</color>
     <color name="color_BeaconDarkTeal">#229C9F</color>
+    <color name="color_BeaconBlack">#333333</color>
 </resources>
