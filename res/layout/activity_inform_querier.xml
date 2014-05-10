@@ -15,6 +15,50 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    android:layout_centerInParent="true">
+                
+        <TextView 
+            android:id="@+id/text_AskContact"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:fontFamily="sans-serif-light"
+	        android:textSize="30sp"
+	        android:textColor="@color/color_BeaconWhite"
+	        android:text="@string/string_Contact_Ask"/>
+        
+        <EditText 
+            android:id="@+id/text_EnterPhoneNumber"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:fontFamily="sans-serif-light"
+	        android:textSize="18sp"
+	        android:textColor="@color/color_BeaconWhite"
+	        android:textColorHint="@color/color_BeaconWhite"
+	        android:hint="@null"
+	        android:maxLines="1"
+	        android:singleLine="true"
+	        android:inputType="phone"/>
+        
+        <TextView 
+            android:id="@+id/text_ContactInstruction"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="60dp"
+	        android:gravity="center"
+	        android:fontFamily="sans-serif-light"
+	        android:textSize="12sp"
+	        android:textColor="@color/color_BeaconWhite"
+	        android:text="@string/string_instruction_Contact_Number"/>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/linear_message"
+        android:orientation="vertical"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_centerInParent="true"
+	    android:visibility="gone">
 
         <TextView 
             android:id="@+id/text_ThankYou"
@@ -35,8 +79,7 @@
 	        android:textSize="18sp"
 	        android:textColor="@color/color_BeaconWhite"
 	        android:text="@string/string_inform_you"
-	        android:layout_marginBottom="60dp"/>
-        
+	        android:layout_marginBottom="60dp"/>       
     </LinearLayout>
 
 </RelativeLayout>

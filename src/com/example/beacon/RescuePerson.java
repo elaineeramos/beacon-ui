@@ -27,8 +27,6 @@ EditText etLocation;
 		
 		final TextView vQuestion = (TextView)findViewById(R.id.text_RescueAsk);
 		final LinearLayout vRescue = (LinearLayout)findViewById(R.id.linear_rescueName);
-		final LinearLayout vContact = (LinearLayout)findViewById(R.id.linear_contactQuerier);
-		final TextView tContact = (TextView)findViewById(R.id.text_AskContact);
 		
 		vQuestion.setText("Where is " + stFirstName + "'s last known location?");
 		face = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Bold.ttf");
@@ -37,17 +35,14 @@ EditText etLocation;
 		etLocation = (EditText) findViewById(R.id.text_RescueAddress);
 		etLocation.setOnKeyListener(new OnKeyListener() {
     	    public boolean onKey(View v, int keyCode, KeyEvent event) {
-    	       if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-    	    	   vRescue.setVisibility(View.GONE);
-    	    	   vContact.setVisibility(View.VISIBLE);
-    	    	   tContact.setTypeface(face);
-    	    	      	    	   
-    	    	   hideSoftKeyboard();
+    	       if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) { 	    	   
+    	    	   vRescue.setVisibility(View.GONE);    	    	      	    	   
+    	    	   hideSoftKeyboard();   
     	    	   
-    	    	   Intent intentRescue = new Intent(RescuePerson.this, InformQuerier.class);
-					intentRescue.putExtra("MESSAGE", stFirstName);
-	                startActivity(intentRescue);
-    	    	   
+    	    	   Intent intentInform = new Intent(RescuePerson.this, InformQuerier.class);
+    	    	   intentInform.putExtra("MESSAGE", stFirstName);
+	               startActivity(intentInform);   
+	               
     	    	   return true;
     	       }
     	       hideSoftKeyboard();
