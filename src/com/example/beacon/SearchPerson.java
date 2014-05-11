@@ -1,12 +1,14 @@
 package com.example.beacon;
 
-import com.example.listviewsample.ListViewer;
+import java.util.ArrayList;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Bundle;
+import android.os.Parcelable;
+import android.support.v4.app.NavUtils;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,12 +17,16 @@ import android.view.View.OnKeyListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.support.v4.app.NavUtils;
+
+import com.example.listviewsample.Globals;
+import com.example.listviewsample.GoogleMapsPerson;
+import com.example.listviewsample.ListViewer;
 
 public class SearchPerson extends Activity {
 	EditText etReportName;
+	Globals g = Globals.getInstance();
 	Typeface face;
-
+	private ArrayList<GoogleMapsPerson> items = new ArrayList<GoogleMapsPerson>();
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -43,7 +49,12 @@ public class SearchPerson extends Activity {
     	       if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
     	    	   hideSoftKeyboard();
     	    	   
+    	    	   //Send Query to API Here and Parse returned value into ArrayList for ListView
+    	    	   //Pass as parcelable
     	    	   Intent intent = new Intent(SearchPerson.this, ListViewer.class);
+    	    	   intent.putParcelableArrayListExtra(g.getPersons_Array_Key(), (ArrayList<? extends Parcelable>) generateData());
+    		 	   intent.putExtra(g.getIsLocation(), false);
+    		 	   intent.putExtra("isArray", false);
                    startActivity(intent);
     	    	   
     	    	   return true;
@@ -98,4 +109,13 @@ public class SearchPerson extends Activity {
 	    inputMethodManager.showSoftInput(view, 0);
 	}
 	
+    //Test
+    public ArrayList<GoogleMapsPerson> generateData(){
+    	
+        items.add(new GoogleMapsPerson("Talusan", "JP", "Alley 28", 0, -19.60790641, -144.73126481));
+        items.add(new GoogleMapsPerson("Talusan", "JP", "Alley 28", 0, 51.16440685,-49.96245742));
+        items.add(new GoogleMapsPerson("Talusan", "JP", "Alley 28", 0, 84.56210993,-90.16163405));
+ 
+        return items;
+    }
 }

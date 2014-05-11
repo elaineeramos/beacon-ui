@@ -23,9 +23,7 @@ public class MainActivity extends Activity {
 	protected static final String EXTRA_MESSAGE = "main";
 	private Button bSearch;
 	private Button bReport;
-	private LinearLayout vHome;
-	private LinearLayout vInputName;
-	private Button bStartSearch;
+	private Button bLocations;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +44,7 @@ public class MainActivity extends Activity {
 		
 		bSearch = (Button) findViewById(R.id.button_Search);
 		bReport = (Button) findViewById(R.id.button_Report);
+		bLocations = (Button) findViewById(R.id.button_Locations);
 		
 		// Fade In animation
 		Animation fadeIn = new AlphaAnimation(0, 1);
@@ -59,6 +58,10 @@ public class MainActivity extends Activity {
 		Animation fadeIn2 = new AlphaAnimation(0, 1);
 		fadeIn2.setInterpolator(new DecelerateInterpolator());
 		fadeIn2.setDuration(2100);
+		
+		Animation fadeIn3 = new AlphaAnimation(0, 1);
+		fadeIn2.setInterpolator(new DecelerateInterpolator());
+		fadeIn2.setDuration(2700);
 		
 		// Animation for Date		
 		Animation aSlide = AnimationUtils.loadAnimation(this, R.anim.linear);				
@@ -81,6 +84,13 @@ public class MainActivity extends Activity {
 		animationSet2.addAnimation(fadeIn2);		
 		bReport.startAnimation(animationSet2);
 		
+		//Animation for Locations
+		Animation aSlide3 = AnimationUtils.loadAnimation(this, R.anim.linear_delay_3);
+		AnimationSet animationSet3 = new AnimationSet(false);
+		animationSet2.addAnimation(aSlide3);
+		animationSet2.addAnimation(fadeIn3);		
+		bLocations.startAnimation(animationSet3);
+		
         bSearch.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Go to SearchPerson
@@ -101,7 +111,17 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
-       
+        
+        bLocations.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Go to ReportPerson activity            
+            	// Need to pass message that this is for Persons not Locations
+            	Intent intent = new Intent(MainActivity.this, QueryLocation.class);
+                String message = "dummy";
+				intent.putExtra("EXTRA_MESSAGE", message);
+                startActivity(intent);
+            }
+        });
 	}
 		
 	@Override

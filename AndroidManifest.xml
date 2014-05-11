@@ -66,6 +66,12 @@
             android:parentActivityName="com.example.beacon.MainActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >            
         </activity>
+		<activity
+            android:name="com.example.beacon.QueryLocation"
+            android:label="@string/title_activity_inform_querier"
+            android:parentActivityName="com.example.beacon.MainActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >            
+        </activity>        
         <activity
             android:name="com.example.beacon.DispSadMessage"
             android:label="@string/title_activity_disp_sad_message"

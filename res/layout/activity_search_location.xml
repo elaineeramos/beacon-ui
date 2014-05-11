@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_BeaconTeal"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:id="@+id/linear_searchName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/text_AskSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:text="@string/string_Search_Location"
+            android:textColor="@color/color_BeaconWhite"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/text_SearchLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:hint="@null"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/color_BeaconWhite"
+            android:textColorHint="@color/color_BeaconWhite"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/text_ReportNameInstruction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:text="@string/string_instruction_EnterFullName"
+            android:textColor="@color/color_BeaconWhite"
+            android:textSize="12sp" />
+   
+
+		<Spinner
+			android:id="@+id/LocationSpinner"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:entries="@array/Location_array"
+			android:fontFamily="sans-serif-light"
+			android:textColor="@color/color_BeaconWhite"
+            android:textSize="12sp" 
+            android:gravity="center"
+			android:prompt="@string/string_Search_Location_by_Type" />
+		
+    </LinearLayout>
+
+</RelativeLayout>

@@ -28,7 +28,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelSlideListener;
 
-public class MapView extends FragmentActivity implements OnMarkerClickListener {
+public class MapView extends FragmentActivity implements OnMarkerClickListener, PanelSlideListener {
 	private GoogleMap mMap;
 	private UiSettings mUiSettings;
 	private ArrayList<GoogleMapsLocation> locationList = new ArrayList<GoogleMapsLocation>();
@@ -39,6 +39,10 @@ public class MapView extends FragmentActivity implements OnMarkerClickListener {
 	private RelativeLayout expand;
 	private int height;
 	private TextView name, status, capacity;
+	private Boolean isLocation = false;
+	private Boolean isArray = false;
+	private Globals g = Globals.getInstance();
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	   public void onCreate(Bundle savedInstanceState)
@@ -50,6 +54,9 @@ public class MapView extends FragmentActivity implements OnMarkerClickListener {
 	      expand = (RelativeLayout)findViewById(R.id.infoTab);
 
 	      name = (TextView) findViewById(R.id.name);
+	      status = (TextView) findViewById(R.id.status);
+	      capacity = (TextView) findViewById(R.id.capacity);
+	      
 	      slider.setDragView(expand);
 			Display display = getWindowManager().getDefaultDisplay();
 			Point size = new Point();
@@ -57,38 +64,16 @@ public class MapView extends FragmentActivity implements OnMarkerClickListener {
 			height = size.y;
         	slider.setPanelHeight(50);
         	slider.setAnchorPoint(0.5f);
-			slider.setPanelSlideListener(new PanelSlideListener() {
-
-	            @Override
-	            public void onPanelSlide(View panel, float slideOffset) {
-
-	            }
-
-	            @Override
-	            public void onPanelExpanded(View panel) {
-	            	System.out.println("Expand1");
-	            }
-
-	            @Override
-	            public void onPanelCollapsed(View panel) {
-	            	System.out.println("onPanelCollapsed1");
-
-	            }
-
-				@Override
-				public void onPanelAnchored(View panel) {
-					slider.setAnchorPoint(0.5f);
-					// TODO Auto-generated method stub
-					
-				}
-	        });
+        	slider.setPanelSlideListener(this);
 		      mMap.setOnMarkerClickListener(this);
 	      Intent i = getIntent();
-	      locationObject = (GoogleMapsLocation) i.getParcelableExtra("Location_parcel");
-	      locationList = i.getParcelableArrayListExtra("Location_array");
-	      
-	      if(i.getBooleanExtra("isLocation", false)) {
-		      if(i.getBooleanExtra("isArray", false)) {
+	      //personObject and personList get extra
+	      isLocation = i.getBooleanExtra("isLocation", false);
+	      isArray = i.getBooleanExtra("isArray", false);
+	      if(isLocation) {
+	    	  locationObject = (GoogleMapsLocation) i.getParcelableExtra(g.getLocation_Object_Key());
+		      locationList = i.getParcelableArrayListExtra(g.getLocations_Array_Key());
+		      if(isArray) {
 		    	  //For clicking map view option (all in list)
 			      DrawPolylineFromLatLng drawer = new DrawPolylineFromLatLng(this, mMap, true, true, R.drawable.ic_launcher);
 			      drawer.execute(locationList);
@@ -103,7 +88,9 @@ public class MapView extends FragmentActivity implements OnMarkerClickListener {
 			      drawer.execute(items);
 		      }
 	      } else {
-		      if(i.getBooleanExtra("isArray", false)) {
+	    	  personObject = (GoogleMapsPerson) i.getParcelableExtra(g.getPerson_Object_Key());
+	    	  personList = i.getParcelableArrayListExtra(g.getPersons_Array_Key());
+		      if(isArray) {
 		    	  //For clicking map view option (all in list)
 			      DrawPolylineFromLatLngPerson drawer = new DrawPolylineFromLatLngPerson(this, mMap, true, true, R.drawable.ic_launcher);
 			      drawer.execute(personList);
@@ -118,10 +105,6 @@ public class MapView extends FragmentActivity implements OnMarkerClickListener {
 			      drawer.execute(items);
 		      }
 	      }
-
-	      
-
-	  
 
 	   }
 	   /* Google Map Related */
@@ -150,15 +133,61 @@ public class MapView extends FragmentActivity implements OnMarkerClickListener {
 	   }
 	@Override
 	public boolean onMarkerClick(Marker arg0) {
-		name.setText(arg0.getTitle());
-		slider.setAnchorPoint(0.5f);
-		slider.setPanelHeight(50);
-		if(slider.isExpanded()) {
-			slider.collapsePane();
+		int index = Integer.parseInt(arg0.getId().substring(1));
+		if(isLocation) {
+			if(isArray) {
+				//Get index of marker
+				name.setText(locationList.get(index).getName());
+				capacity.setText(locationList.get(index).getType() + "");
+				status.setText(locationList.get(index).getAddress());
+			} else {
+				name.setText(locationObject.getName());
+				capacity.setText(locationObject.getType() + "");
+				status.setText(locationObject.getAddress());
+			}
 		} else {
-			slider.expandPane();
+			if(isArray) {
+//				name.setText(personObject.getGivenName());
+//				capacity.setText(personObject.getLastLocation());
+//				status.setText(personObject.getStatusDetails());
+			} else {
+				name.setText(personObject.getGivenName());
+				capacity.setText(personObject.getLastLocation());
+				status.setText(personObject.getStatusDetails());				
+			}
 		}
 
+		if(slider.isAnchored()) {
+			//slider.collapsePane();
+		} else {
+			slider.expandPane(0.5f);
+		}
 		return false;
 	}
+
+        @Override
+        public void onPanelSlide(View panel, float slideOffset) {
+
+        }
+
+        @Override
+        public void onPanelExpanded(View panel) {
+    		slider.setAnchorPoint(0.5f);
+        	System.out.println("Expand1");
+        }
+
+        @Override
+        public void onPanelCollapsed(View panel) {
+    		slider.setAnchorPoint(0.5f);
+        	System.out.println("onPanelCollapsed1");
+
+        }
+
+		@Override
+		public void onPanelAnchored(View panel) {
+			slider.setAnchorPoint(0.5f);
+			System.out.println("onPanelAnchored1");
+			// TODO Auto-generated method stub
+			
+		}
 }

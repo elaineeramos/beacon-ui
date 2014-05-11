@@ -66,28 +66,26 @@ protected List<GoogleMapsLocation> doInBackground(List<GoogleMapsLocation>... lo
 
  protected void onPostExecute(List<GoogleMapsLocation> locationsList) {
 		pt_loc = locationsList;
-		System.out.println(pt_loc.get(0).getCoordinates());
+		src = pt_loc.get(0).getCoordinates();
+		dest = pt_loc.get(listSize).getCoordinates();
 		 listSize = pt_loc.size() - 1;
-			Log.d("JPT", listSize + "");
 			if(!mOption1) {
 				 mMap.clear();
 			 }
 			 Random rnd = new Random(); 
 			 int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));  
-			 for (int i = 0; i < listSize; i++) {
-					src = pt_loc.get(0).getCoordinates();
-					dest = pt_loc.get(listSize).getCoordinates();
+			 for (int i = 0; i <= listSize; i++) {
+					
+					
 					current = pt_loc.get(i).getCoordinates();
 					locationName = pt_loc.get(i).getName();
-					Log.d("JPT", locationName);
-					Log.d("JPT", src + "");
 					
 					if(mOption2) {
 //						mMap.addMarker(new MarkerOptions() //mMap is the Map Object
 //						.title(locationName)
 //						.position(src)
 //						.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-						
+						System.out.println(current);
 						mMap.addMarker(new MarkerOptions() //mMap is the Map Object
 						.title(locationName)
 						.position(current)

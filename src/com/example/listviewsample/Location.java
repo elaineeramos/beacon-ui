@@ -1,9 +1,6 @@
 package com.example.listviewsample;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-public class Location implements Parcelable
+public class Location
 {
 	public static int TYPE_ANY 			= 0;
 	public static int TYPE_SCHOOL 		= 1;
@@ -58,42 +55,5 @@ public class Location implements Parcelable
 	{
 		return lon;
 	}
-
-	@Override
-	public int describeContents() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public void writeToParcel(Parcel arg0, int arg1) {
-		arg0.writeInt(id);
-		arg0.writeInt(type);
-		arg0.writeString(name);
-		arg0.writeString(address);
-		arg0.writeDouble(lat);
-		arg0.writeDouble(lon);
-	}
-	
-    // this is used to regenerate your object. All Parcelables must have a CREATOR that implements these two methods
-    public static final Location.Creator<Location> CREATOR = new Parcelable.Creator<Location>() {
-        public Location createFromParcel(Parcel in) {
-            return new Location(in);
-        }
-
-        public Location[] newArray(int size) {
-            return new Location[size];
-        }
-    };
-
-    // example constructor that takes a Parcel and gives you an object populated with it's values
-    private Location(Parcel in) {
-		id = in.readInt();
-		type = in.readInt();
-		name = in.readString();
-		address = in.readString();
-		lat = in.readDouble();
-		lon = in.readDouble();
-    }
 }
 

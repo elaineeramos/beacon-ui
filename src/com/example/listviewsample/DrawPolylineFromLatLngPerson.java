@@ -59,14 +59,15 @@ implements DialogInterface.OnCancelListener {
   }
   
 @Override
-protected List<GoogleMapsPerson> doInBackground(List<GoogleMapsPerson>... locationsList) {
+protected List<GoogleMapsPerson> doInBackground(List<GoogleMapsPerson>... personsList) {
 
-			return locationsList[0];
+			return personsList[0];
 }
 
- protected void onPostExecute(List<GoogleMapsPerson> locationsList) {
-		pt_loc = locationsList;
-		System.out.println(pt_loc.get(0).getCoordinates());
+ protected void onPostExecute(List<GoogleMapsPerson> personsList) {
+		pt_loc = personsList;
+		src = pt_loc.get(0).getCoordinates();
+		dest = pt_loc.get(listSize).getCoordinates();
 		 listSize = pt_loc.size() - 1;
 			Log.d("JPT", listSize + "");
 			if(!mOption1) {
@@ -74,29 +75,28 @@ protected List<GoogleMapsPerson> doInBackground(List<GoogleMapsPerson>... locati
 			 }
 			 Random rnd = new Random(); 
 			 int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));  
-			 for (int i = 0; i < listSize; i++) {
-					src = pt_loc.get(0).getCoordinates();
-					dest = pt_loc.get(listSize).getCoordinates();
+			 for (int i = 0; i <= listSize; i++) {
+
 					current = pt_loc.get(i).getCoordinates();
 					fullName = pt_loc.get(i).getGivenName() + " " + pt_loc.get(i).getLastName();
 					Log.d("JPT", fullName);
 					Log.d("JPT", src + "");
 					
 					if(mOption2) {
-						mMap.addMarker(new MarkerOptions() //mMap is the Map Object
-						.title(fullName)
-						.position(src)
-						.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-						
+//						mMap.addMarker(new MarkerOptions() //mMap is the Map Object
+//						.title(fullName)
+//						.position(src)
+//						.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+//						
 						mMap.addMarker(new MarkerOptions() //mMap is the Map Object
 						.title(fullName)
 						.position(current)
 						.icon(BitmapDescriptorFactory.fromResource(mAsset)));
-						
-						mMap.addMarker(new MarkerOptions() //mMap is the Map Object
-						.title(fullName)
-						.position(dest)
-						.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+//						
+//						mMap.addMarker(new MarkerOptions() //mMap is the Map Object
+//						.title(fullName)
+//						.position(dest)
+//						.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
 					} else {
 						mMap.addMarker(new MarkerOptions() //mMap is the Map Object
 						.title(fullName)

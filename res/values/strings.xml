@@ -5,8 +5,11 @@
     <string name="action_settings">Settings</string>
     <string name="string_Search">SEARCH</string>
     <string name="string_Report">REPORT</string>
+    <string name="string_Locations">LOCATIONS</string>
     <string name="string_DateTime">Date and Time</string>
     <string name="string_Search_Ask">Who are you looking for?</string>
+    <string name="string_Search_Location">Search for Evacuation Centers</string>
+    <string name="string_Search_Location_by_Type">Search by Type</string>
     <string name="string_Report_Ask">Who are you reporting?</string>
     <string name="string_Status_Ask">What is their Status?</string>
     <string name="string_Location_Ask">Where is ____ found?</string>
@@ -29,6 +32,16 @@
         <item>Found Dead</item>
     </string-array>
 
+	<string-array name="Location_array">
+	    <item>Search by Type</item>
+        <item>Nearest to my Location</item>
+        <item>Hospitals</item>
+        <item>Churches</item>
+        <item>Schools</item>
+        <item>Police Stations</item>
+        <item>Fire Stations</item>
+    </string-array>
+    
     <string name="title_activity_report_person">ReportPerson</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_found_person">FoundPerson</string>

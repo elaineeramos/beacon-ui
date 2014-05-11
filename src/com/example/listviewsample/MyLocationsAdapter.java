@@ -11,12 +11,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
  
-public class MyAdapter extends ArrayAdapter<GoogleMapsLocation> {
+public class MyLocationsAdapter extends ArrayAdapter<GoogleMapsLocation> {
  
         private final Context context;
         private final ArrayList<GoogleMapsLocation> itemsArrayList;
  
-        public MyAdapter(Context context, ArrayList<GoogleMapsLocation> itemsArrayList) {
+        public MyLocationsAdapter(Context context, ArrayList<GoogleMapsLocation> itemsArrayList) {
  
             super(context, R.layout.row, itemsArrayList);
  
