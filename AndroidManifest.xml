@@ -25,7 +25,7 @@
         android:label="@string/app_name"
         android:theme="@style/CustomActionBarTheme" >
         <activity
-            android:name="com.example.beacon.MainActivity"
+            android:name="net.magis.BeaconPH.UI.MainActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
             <intent-filter>
@@ -35,47 +35,47 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.beacon.ReportPerson"
+            android:name="net.magis.BeaconPH.UI.ReportPerson"
             android:label="@string/title_activity_report_person"
-            android:parentActivityName="com.example.beacon.MainActivity" >
+            android:parentActivityName="net.magis.BeaconPH.UI.MainActivity" >
         </activity>
         <activity
-            android:name="com.example.beacon.FoundPerson"
+            android:name="net.magis.BeaconPH.UI.FoundPerson"
             android:label="@string/title_activity_found_person"
-            android:parentActivityName="com.example.beacon.ReportPerson" >
+            android:parentActivityName="net.magis.BeaconPH.UI.ReportPerson" >
         </activity>
         <activity
-            android:name="com.example.beacon.RescuePerson"
+            android:name="net.magis.BeaconPH.UI.RescuePerson"
             android:label="@string/title_activity_rescue_person"
-            android:parentActivityName="com.example.beacon.ReportPerson" >
+            android:parentActivityName="net.magis.BeaconPH.UI.ReportPerson" >
         </activity>
         <activity
-            android:name="com.example.beacon.InformQuerier"
+            android:name="net.magis.BeaconPH.UI.InformQuerier"
             android:label="@string/title_activity_inform_querier"
-            android:parentActivityName="com.example.beacon.MainActivity" >
+            android:parentActivityName="net.magis.BeaconPH.UI.MainActivity" >
         </activity>
         <activity
-            android:name="com.example.listviewsample.ListViewer"
+            android:name="net.magis.BeaconPH.UI.Extra.ListViewer"
             android:label="@string/title_activity_inform_querier"
-            android:parentActivityName="com.example.beacon.MainActivity"
+            android:parentActivityName="net.magis.BeaconPH.UI.MainActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
         </activity>
 		<activity
-            android:name="com.example.listviewsample.MapView"
+            android:name="net.magis.BeaconPH.UI.Extra.MapView"
             android:label="@string/title_activity_inform_querier"
-            android:parentActivityName="com.example.beacon.MainActivity"
+            android:parentActivityName="net.magis.BeaconPH.UI.MainActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >            
         </activity>
 		<activity
-            android:name="com.example.beacon.QueryLocation"
+            android:name="net.magis.BeaconPH.UI.QueryLocation"
             android:label="@string/title_activity_inform_querier"
-            android:parentActivityName="com.example.beacon.MainActivity"
+            android:parentActivityName="net.magis.BeaconPH.UI.MainActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >            
         </activity>        
         <activity
-            android:name="com.example.beacon.DispSadMessage"
+            android:name="net.magis.BeaconPH.UI.DispSadMessage"
             android:label="@string/title_activity_disp_sad_message"
-            android:parentActivityName="com.example.beacon.MainActivity" >
+            android:parentActivityName="net.magis.BeaconPH.UI.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.beacon.MainActivity" />
@@ -85,9 +85,9 @@
             android:value="AIzaSyD9ZAqKJrtPZYgzTSQTmldg8_S1CgkJYuM" />
 
         <activity
-            android:name="com.example.beacon.SearchPerson"
+            android:name="net.magis.BeaconPH.UI.SearchPerson"
             android:label="@string/title_activity_search_person"
-            android:parentActivityName="com.example.beacon.MainActivity" >
+            android:parentActivityName="net.magis.BeaconPH.UI.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.beacon.MainActivity" />
